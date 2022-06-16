@@ -42,11 +42,7 @@ include(ImportUnicorn)
 
 find_package(SystemCLanguage)
 
-add_library(${PROJECT_NAME}
-	src/unicorn_sc.cpp
-)
-message(STATUS "Linking ${UNICORN_LIB_NAME}")
-
+add_library(${PROJECT_NAME}	src/unicorn_sc.cpp)
 target_include_directories(${PROJECT_NAME} PUBLIC ${CMAKE_CURRENT_LIST_DIR}/src)
 target_include_directories(${PROJECT_NAME} PUBLIC ${install_dir}/include)
 target_link_directories(${PROJECT_NAME} PUBLIC  ${CMAKE_BINARY_DIR})
