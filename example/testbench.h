@@ -1,3 +1,7 @@
+/*******************************************************************************
+ * Copyright 2022 MINRES Technologies GmbH
+ * SPDX-License-Identifier: Apache-2.0
+ *******************************************************************************/
 #ifndef TESTBENCH_H_
 #define TESTBENCH_H_
 

@@ -1,8 +1,7 @@
-/*
- * Copyright (c) 2019 -2021 MINRES Technolgies GmbH
- *
+/*******************************************************************************
+ * Copyright 2022 MINRES Technologies GmbH
  * SPDX-License-Identifier: Apache-2.0
- */
+ *******************************************************************************/
 
 #ifndef _UART_H_
 #define _UART_H_

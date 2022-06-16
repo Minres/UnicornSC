@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2019 -2021 MINRES Technolgies GmbH
+# Copyright (c) 20221 MINRES Technolgies GmbH
 #
 # SPDX-License-Identifier: Apache-2.0
 #

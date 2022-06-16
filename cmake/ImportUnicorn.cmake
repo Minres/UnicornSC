@@ -1,3 +1,8 @@
+#
+# Copyright (c) 2022 MINRES Technolgies GmbH
+#
+# SPDX-License-Identifier: Apache-2.0
+#
 include(ExternalProject)
 ExternalProject_Add(
 	unicorn

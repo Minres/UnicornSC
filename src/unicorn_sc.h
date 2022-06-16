@@ -1,9 +1,7 @@
-/*
- * unicorn_sc.h
- *
- *  Created on: 14.06.2022
- *      Author: eyck
- */
+/*******************************************************************************
+ * Copyright 2022 MINRES Technologies GmbH
+ * SPDX-License-Identifier: Apache-2.0
+ *******************************************************************************/
 
 #ifndef SRC_UNICORN_SC_H_
 #define SRC_UNICORN_SC_H_

@@ -1,3 +1,7 @@
+/*******************************************************************************
+ * Copyright 2022 MINRES Technologies GmbH
+ * SPDX-License-Identifier: Apache-2.0
+ *******************************************************************************/
 #include "testbench.h"
 #include <util/strprintf.h>
 #include <elfio/elfio.hpp>
