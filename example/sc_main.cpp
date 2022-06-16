@@ -28,7 +28,7 @@ int sc_main(int argc, char* argv[]) {
     // run the simulation
     ///////////////////////////////////////////////////////////////////////////
     try {
-        sc_start();
+        sc_start(1_sec);
         if(!sc_end_of_simulation_invoked())
             sc_stop();
     } catch(sc_report& rep) {

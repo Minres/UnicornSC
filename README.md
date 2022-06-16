@@ -10,6 +10,13 @@ cmake -S . -B build -DCMAKE_BUILD_TYPE=Debug
 cmake --build build 
 ```
 
+To run teh example one also needs the RSIC-V gcc toolsuite installed.
+
+```
+make -C example/fw/hello-world
+build/example/unicorn-sc-ex example/fw/hello-world/hello
+```
+
 ## TODO
 
 * add gdb server to allow debugging
