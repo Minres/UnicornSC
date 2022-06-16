@@ -10,7 +10,7 @@ cmake -S . -B build -DCMAKE_BUILD_TYPE=Debug
 cmake --build build 
 ```
 
-To run teh example one also needs the RSIC-V gcc toolsuite installed.
+To run the example one also needs the RSIC-V gcc toolsuite installed.
 
 ```
 make -C example/fw/hello-world
