@@ -1,0 +1,6 @@
+/*.elf
+/*.dis
+/*.o
+/*.map
+/libwrap.a
+/hello
