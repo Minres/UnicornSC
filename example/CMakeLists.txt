@@ -7,8 +7,6 @@ cmake_minimum_required(VERSION 3.12)
 
 project(unicorn-sc-example)
 
-include(ImportSCC)
-
 find_package(systemc-cci)
 find_package(elfio)
 
