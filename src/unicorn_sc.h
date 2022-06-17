@@ -29,13 +29,13 @@ public:
 
     sc_core::sc_vector<sc_core::sc_attribute<uint64_t>> internal_mem_size{"internal_mem_size"};
 
-    sc_core::sc_attribute<uint64_t> external_mem_start{"external_mem_start", 0};
+    sc_core::sc_vector<sc_core::sc_attribute<uint64_t>> external_mem_start{"external_mem_start"};
 
-    sc_core::sc_attribute<uint64_t> external_mem_size{"external_mem_size", 0};
+    sc_core::sc_vector<sc_core::sc_attribute<uint64_t>> external_mem_size{"external_mem_size"};
 
     sc_core::sc_attribute<uint64_t> start_address{"start_address", 0};
 
-    unicorn_sc(sc_core::sc_module_name const& name, size_t num_internal_mems = 1);
+    unicorn_sc(sc_core::sc_module_name const& name, size_t num_internal_mems = 1, size_t num_external_mems = 1);
 
     virtual ~unicorn_sc();
 

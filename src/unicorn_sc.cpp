@@ -257,11 +257,12 @@ struct unicorn_sc::Impl: public tlm::tlm_bw_transport_if<tlm::tlm_base_protocol_
             if(owner.internal_mem_size[i].value) {
                 uc_mem_map(uc, owner.internal_mem_start[i].value, owner.internal_mem_size[i].value, UC_PROT_ALL);
             }
-        if(owner.external_mem_size.value) {
-            handler.emplace_back(this, owner.external_mem_start.value);
-            auto* entry = &handler.back();
-            uc_mmio_map(uc,owner.external_mem_start.value,owner.external_mem_size.value, read_cb, entry, write_cb, entry);
-        }
+        for(auto i=0U; i< owner.external_mem_size.size(); ++i)
+            if(owner.external_mem_size[i].value) {
+                handler.emplace_back(this, owner.external_mem_start[i].value);
+                auto* entry = &handler.back();
+                uc_mmio_map(uc,owner.external_mem_start[i].value,owner.external_mem_size[i].value, read_cb, entry, write_cb, entry);
+            }
     }
 
     inline uint64_t get_pc(){
@@ -345,10 +346,12 @@ void unicorn_sc::run() {
     }
 }
 
-unicorn_sc::unicorn_sc(const sc_core::sc_module_name &name, size_t num_internal_mems)
+unicorn_sc::unicorn_sc(const sc_core::sc_module_name &name, size_t num_internal_mems, size_t num_external_mems)
 : sc_core::sc_module(name)
 , internal_mem_start("internal_mem_start", num_internal_mems)
 , internal_mem_size("internal_mem_size", num_internal_mems)
+, external_mem_start("external_mem_start", num_external_mems)
+, external_mem_size("external_mem_size", num_external_mems)
 , impl(new unicorn_sc::Impl(*this))
 {
     add_attribute(arch);
@@ -356,8 +359,8 @@ unicorn_sc::unicorn_sc(const sc_core::sc_module_name &name, size_t num_internal_
     add_attribute(model);
     for(auto&a:internal_mem_start) add_attribute(a);
     for(auto&a:internal_mem_size) add_attribute(a);
-    add_attribute(external_mem_start);
-    add_attribute(external_mem_size);
+    for(auto&a:external_mem_start) add_attribute(a);
+    for(auto&a:external_mem_size) add_attribute(a);
     add_attribute(start_address);
 
     sc_core::sc_spawn([this](){run();});

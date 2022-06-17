@@ -23,8 +23,8 @@ testbench::testbench(sc_module_name nm)
     core.internal_mem_size[0].value = 1_MB;
     core.internal_mem_start[1].value = 0x10000000;
     core.internal_mem_size[1].value = 16_kB;
-    core.external_mem_start.value = 0xffff0000ULL;
-    core.external_mem_size.value = 64_kB;
+    core.external_mem_start[0].value = 0xffff0000ULL;
+    core.external_mem_size[0].value = 64_kB;
     core.arch.value = "RISCV";
     core.mode.value = "RISCV32";
     core.model.value = 1; // UC_CPU_RISCV32_BASE32 = 0,
