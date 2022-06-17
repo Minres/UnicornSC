@@ -351,6 +351,15 @@ unicorn_sc::unicorn_sc(const sc_core::sc_module_name &name, size_t num_internal_
 , internal_mem_size("internal_mem_size", num_internal_mems)
 , impl(new unicorn_sc::Impl(*this))
 {
+    add_attribute(arch);
+    add_attribute(mode);
+    add_attribute(model);
+    for(auto&a:internal_mem_start) add_attribute(a);
+    for(auto&a:internal_mem_size) add_attribute(a);
+    add_attribute(external_mem_start);
+    add_attribute(external_mem_size);
+    add_attribute(start_address);
+
     sc_core::sc_spawn([this](){run();});
     isckt.bind(*impl);
 }
