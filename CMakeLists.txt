@@ -8,8 +8,6 @@ list(APPEND CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/cmake)
 
 project(unicorn-sc VERSION 1.0.0)
 
-option(UPDATE_UNICORN_SRC "Always update the unicorn engine library" OFF)
-
 if(CMAKE_PROJECT_NAME STREQUAL "unicorn-sc")
     message(STATUS "Building Unicorn-SC in standalone mode")
 	list(APPEND CMAKE_MODULE_PATH ${CMAKE_BINARY_DIR})

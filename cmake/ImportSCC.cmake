@@ -3,13 +3,16 @@
 #
 # SPDX-License-Identifier: Apache-2.0
 #
+
+option(UPDATE_SCC_SRC "Always update the SCC library" OFF)
+
 include(ExternalProject)
 ExternalProject_Add(
 	scc_git
     GIT_REPOSITORY "https://github.com/Minres/SystemC-Components.git"
     GIT_TAG        "origin/develop"
     GIT_SHALLOW    ON
-  	UPDATE_DISCONNECTED NOT ${UPDATE_UNICORN_SRC} # When enabled, this option causes the update step to be skipped.
+  	UPDATE_DISCONNECTED NOT ${UPDATE_SCC_SRC} # When enabled, this option causes the update step to be skipped.
   	CMAKE_ARGS    -DCMAKE_INSTALL_PREFIX:PATH=install -DBUILD_SCC_DOCUMENTATION=OFF
 )
 

@@ -3,6 +3,9 @@
 #
 # SPDX-License-Identifier: Apache-2.0
 #
+
+option(UPDATE_UNICORN_SRC "Always update the unicorn engine library" OFF)
+
 include(ExternalProject)
 ExternalProject_Add(
 	unicorn
