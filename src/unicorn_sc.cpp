@@ -318,7 +318,7 @@ struct unicorn_sc::Impl: public tlm::tlm_bw_transport_if<tlm::tlm_base_protocol_
                 uc_reg_read(uc, UC_RISCV_REG_PC, &pc);
                 break;
             case UC_ARCH_S390X:
-                uc_reg_write(uc, UC_S390X_REG_PC, &pc);
+                uc_reg_read(uc, UC_S390X_REG_PC, &pc);
                 break;
         }
         return pc;
