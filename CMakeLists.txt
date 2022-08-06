@@ -80,3 +80,4 @@ target_link_directories(${PROJECT_NAME} PUBLIC  ${CMAKE_BINARY_DIR})
 target_link_libraries(${PROJECT_NAME} PUBLIC unicorn SystemC::systemc)
 
 add_subdirectory(example)
+add_subdirectory(example/fw)
